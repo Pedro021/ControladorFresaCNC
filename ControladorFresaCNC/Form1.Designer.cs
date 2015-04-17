@@ -34,43 +34,43 @@
             this.menuArchivo = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAbrirImagen = new System.Windows.Forms.ToolStripMenuItem();
             this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuEnlazarFresa = new System.Windows.Forms.ToolStripMenuItem();
             this.herramientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.serialPort = new System.IO.Ports.SerialPort(this.components);
             this.procesoAvanzadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.serialPort = new System.IO.Ports.SerialPort(this.components);
             this.groupElementos = new System.Windows.Forms.GroupBox();
-            this.groupEjemplos = new System.Windows.Forms.GroupBox();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.lblElementos = new System.Windows.Forms.Label();
-            this.lblMostrando = new System.Windows.Forms.Label();
             this.lblProcesando = new System.Windows.Forms.Label();
-            this.pbarProcesado = new System.Windows.Forms.ProgressBar();
-            this.lblPbar = new System.Windows.Forms.Label();
-            this.btnEjemplo5 = new System.Windows.Forms.Button();
-            this.btnEjemplo4 = new System.Windows.Forms.Button();
-            this.btnEjemplo3 = new System.Windows.Forms.Button();
-            this.btnEjemplo2 = new System.Windows.Forms.Button();
-            this.btnEjemplo1 = new System.Windows.Forms.Button();
+            this.lblMostrando = new System.Windows.Forms.Label();
+            this.lblElementos = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.groupEjemplos = new System.Windows.Forms.GroupBox();
+            this.btnEjemplo5 = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.btnEjemplo4 = new System.Windows.Forms.Button();
+            this.btnEjemplo3 = new System.Windows.Forms.Button();
+            this.btnEjemplo2 = new System.Windows.Forms.Button();
+            this.btnEjemplo1 = new System.Windows.Forms.Button();
+            this.pbarProcesado = new System.Windows.Forms.ProgressBar();
+            this.lblPbar = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.pbImagen = new System.Windows.Forms.PictureBox();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnProcesar = new System.Windows.Forms.Button();
-            this.menuEnlazarFresa = new System.Windows.Forms.ToolStripMenuItem();
             this.lblTamaño = new System.Windows.Forms.Label();
             this.Menu.SuspendLayout();
             this.groupElementos.SuspendLayout();
-            this.groupEjemplos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupEjemplos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,16 +98,28 @@
             // menuAbrirImagen
             // 
             this.menuAbrirImagen.Name = "menuAbrirImagen";
-            this.menuAbrirImagen.Size = new System.Drawing.Size(152, 22);
+            this.menuAbrirImagen.Size = new System.Drawing.Size(143, 22);
             this.menuAbrirImagen.Text = "Abrir Imagen";
             this.menuAbrirImagen.Click += new System.EventHandler(this.menuAbrirImagen_Click);
             // 
             // guardarToolStripMenuItem
             // 
             this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
-            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.guardarToolStripMenuItem.Text = "Guardar";
             this.guardarToolStripMenuItem.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
+            // 
+            // menuEnlazarFresa
+            // 
+            this.menuEnlazarFresa.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.menuEnlazarFresa.Checked = true;
+            this.menuEnlazarFresa.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.menuEnlazarFresa.ForeColor = System.Drawing.Color.Red;
+            this.menuEnlazarFresa.Image = global::ControladorFresaCNC.Properties.Resources.linkOff;
+            this.menuEnlazarFresa.Name = "menuEnlazarFresa";
+            this.menuEnlazarFresa.Size = new System.Drawing.Size(135, 20);
+            this.menuEnlazarFresa.Text = "Enlazar a Fresadora";
+            this.menuEnlazarFresa.Click += new System.EventHandler(this.menuEnlazarFresa_Click);
             // 
             // herramientasToolStripMenuItem
             // 
@@ -117,15 +129,15 @@
             this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
             this.herramientasToolStripMenuItem.Text = "Herramientas";
             // 
-            // serialPort
-            // 
-            this.serialPort.Parity = System.IO.Ports.Parity.Even;
-            // 
             // procesoAvanzadoToolStripMenuItem
             // 
             this.procesoAvanzadoToolStripMenuItem.Name = "procesoAvanzadoToolStripMenuItem";
             this.procesoAvanzadoToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.procesoAvanzadoToolStripMenuItem.Text = "Proceso Avanzado";
+            // 
+            // serialPort
+            // 
+            this.serialPort.Parity = System.IO.Ports.Parity.Even;
             // 
             // groupElementos
             // 
@@ -145,122 +157,32 @@
             this.groupElementos.TabStop = false;
             this.groupElementos.Text = "Elementos Independientes";
             // 
-            // groupEjemplos
+            // lblProcesando
             // 
-            this.groupEjemplos.Controls.Add(this.btnEjemplo5);
-            this.groupEjemplos.Controls.Add(this.btnEjemplo4);
-            this.groupEjemplos.Controls.Add(this.btnEjemplo3);
-            this.groupEjemplos.Controls.Add(this.btnEjemplo2);
-            this.groupEjemplos.Controls.Add(this.btnEjemplo1);
-            this.groupEjemplos.Location = new System.Drawing.Point(12, 38);
-            this.groupEjemplos.Name = "groupEjemplos";
-            this.groupEjemplos.Size = new System.Drawing.Size(133, 511);
-            this.groupEjemplos.TabIndex = 6;
-            this.groupEjemplos.TabStop = false;
-            this.groupEjemplos.Text = "Ejemplos";
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "Sencillo.PNG");
-            this.imageList1.Images.SetKeyName(1, "kk.png");
-            // 
-            // lblElementos
-            // 
-            this.lblElementos.AutoSize = true;
-            this.lblElementos.Location = new System.Drawing.Point(21, 29);
-            this.lblElementos.Name = "lblElementos";
-            this.lblElementos.Size = new System.Drawing.Size(122, 13);
-            this.lblElementos.TabIndex = 6;
-            this.lblElementos.Text = "Elementos Encontrados:";
+            this.lblProcesando.AutoSize = true;
+            this.lblProcesando.Location = new System.Drawing.Point(21, 365);
+            this.lblProcesando.Name = "lblProcesando";
+            this.lblProcesando.Size = new System.Drawing.Size(130, 13);
+            this.lblProcesando.TabIndex = 7;
+            this.lblProcesando.Text = "Procesando: Sin Procesar";
             // 
             // lblMostrando
             // 
             this.lblMostrando.AutoSize = true;
             this.lblMostrando.Location = new System.Drawing.Point(21, 48);
             this.lblMostrando.Name = "lblMostrando";
-            this.lblMostrando.Size = new System.Drawing.Size(60, 13);
+            this.lblMostrando.Size = new System.Drawing.Size(123, 13);
             this.lblMostrando.TabIndex = 7;
-            this.lblMostrando.Text = "Mostrando:";
+            this.lblMostrando.Text = "Mostrando: Sin Procesar";
             // 
-            // lblProcesando
+            // lblElementos
             // 
-            this.lblProcesando.AutoSize = true;
-            this.lblProcesando.Location = new System.Drawing.Point(21, 365);
-            this.lblProcesando.Name = "lblProcesando";
-            this.lblProcesando.Size = new System.Drawing.Size(67, 13);
-            this.lblProcesando.TabIndex = 7;
-            this.lblProcesando.Text = "Procesando:";
-            // 
-            // pbarProcesado
-            // 
-            this.pbarProcesado.Location = new System.Drawing.Point(172, 526);
-            this.pbarProcesado.Name = "pbarProcesado";
-            this.pbarProcesado.Size = new System.Drawing.Size(550, 23);
-            this.pbarProcesado.TabIndex = 7;
-            // 
-            // lblPbar
-            // 
-            this.lblPbar.AutoSize = true;
-            this.lblPbar.Location = new System.Drawing.Point(441, 531);
-            this.lblPbar.Name = "lblPbar";
-            this.lblPbar.Size = new System.Drawing.Size(21, 13);
-            this.lblPbar.TabIndex = 8;
-            this.lblPbar.Text = "0%";
-            this.lblPbar.Visible = false;
-            // 
-            // btnEjemplo5
-            // 
-            this.btnEjemplo5.ImageIndex = 0;
-            this.btnEjemplo5.ImageList = this.imageList1;
-            this.btnEjemplo5.Location = new System.Drawing.Point(6, 403);
-            this.btnEjemplo5.Name = "btnEjemplo5";
-            this.btnEjemplo5.Size = new System.Drawing.Size(120, 90);
-            this.btnEjemplo5.TabIndex = 11;
-            this.btnEjemplo5.UseVisualStyleBackColor = true;
-            // 
-            // btnEjemplo4
-            // 
-            this.btnEjemplo4.ImageIndex = 0;
-            this.btnEjemplo4.ImageList = this.imageList1;
-            this.btnEjemplo4.Location = new System.Drawing.Point(6, 307);
-            this.btnEjemplo4.Name = "btnEjemplo4";
-            this.btnEjemplo4.Size = new System.Drawing.Size(120, 90);
-            this.btnEjemplo4.TabIndex = 10;
-            this.btnEjemplo4.UseVisualStyleBackColor = true;
-            // 
-            // btnEjemplo3
-            // 
-            this.btnEjemplo3.ImageIndex = 0;
-            this.btnEjemplo3.ImageList = this.imageList1;
-            this.btnEjemplo3.Location = new System.Drawing.Point(6, 211);
-            this.btnEjemplo3.Name = "btnEjemplo3";
-            this.btnEjemplo3.Size = new System.Drawing.Size(120, 90);
-            this.btnEjemplo3.TabIndex = 9;
-            this.btnEjemplo3.UseVisualStyleBackColor = true;
-            // 
-            // btnEjemplo2
-            // 
-            this.btnEjemplo2.ImageIndex = 1;
-            this.btnEjemplo2.ImageList = this.imageList1;
-            this.btnEjemplo2.Location = new System.Drawing.Point(6, 115);
-            this.btnEjemplo2.Name = "btnEjemplo2";
-            this.btnEjemplo2.Size = new System.Drawing.Size(120, 90);
-            this.btnEjemplo2.TabIndex = 8;
-            this.btnEjemplo2.UseVisualStyleBackColor = true;
-            this.btnEjemplo2.Click += new System.EventHandler(this.btnEjemplo2_Click);
-            // 
-            // btnEjemplo1
-            // 
-            this.btnEjemplo1.ImageIndex = 0;
-            this.btnEjemplo1.ImageList = this.imageList1;
-            this.btnEjemplo1.Location = new System.Drawing.Point(6, 19);
-            this.btnEjemplo1.Name = "btnEjemplo1";
-            this.btnEjemplo1.Size = new System.Drawing.Size(120, 90);
-            this.btnEjemplo1.TabIndex = 7;
-            this.btnEjemplo1.UseVisualStyleBackColor = true;
-            this.btnEjemplo1.Click += new System.EventHandler(this.btnEjemplo1_Click);
+            this.lblElementos.AutoSize = true;
+            this.lblElementos.Location = new System.Drawing.Point(21, 29);
+            this.lblElementos.Name = "lblElementos";
+            this.lblElementos.Size = new System.Drawing.Size(185, 13);
+            this.lblElementos.TabIndex = 6;
+            this.lblElementos.Text = "Elementos Encontrados: Sin Procesar";
             // 
             // pictureBox5
             // 
@@ -316,6 +238,96 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // groupEjemplos
+            // 
+            this.groupEjemplos.Controls.Add(this.btnEjemplo5);
+            this.groupEjemplos.Controls.Add(this.btnEjemplo4);
+            this.groupEjemplos.Controls.Add(this.btnEjemplo3);
+            this.groupEjemplos.Controls.Add(this.btnEjemplo2);
+            this.groupEjemplos.Controls.Add(this.btnEjemplo1);
+            this.groupEjemplos.Location = new System.Drawing.Point(12, 38);
+            this.groupEjemplos.Name = "groupEjemplos";
+            this.groupEjemplos.Size = new System.Drawing.Size(133, 511);
+            this.groupEjemplos.TabIndex = 6;
+            this.groupEjemplos.TabStop = false;
+            this.groupEjemplos.Text = "Ejemplos";
+            // 
+            // btnEjemplo5
+            // 
+            this.btnEjemplo5.ImageIndex = 0;
+            this.btnEjemplo5.ImageList = this.imageList1;
+            this.btnEjemplo5.Location = new System.Drawing.Point(6, 403);
+            this.btnEjemplo5.Name = "btnEjemplo5";
+            this.btnEjemplo5.Size = new System.Drawing.Size(120, 90);
+            this.btnEjemplo5.TabIndex = 11;
+            this.btnEjemplo5.UseVisualStyleBackColor = true;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "Sencillo.PNG");
+            this.imageList1.Images.SetKeyName(1, "kk.png");
+            // 
+            // btnEjemplo4
+            // 
+            this.btnEjemplo4.ImageIndex = 0;
+            this.btnEjemplo4.ImageList = this.imageList1;
+            this.btnEjemplo4.Location = new System.Drawing.Point(6, 307);
+            this.btnEjemplo4.Name = "btnEjemplo4";
+            this.btnEjemplo4.Size = new System.Drawing.Size(120, 90);
+            this.btnEjemplo4.TabIndex = 10;
+            this.btnEjemplo4.UseVisualStyleBackColor = true;
+            // 
+            // btnEjemplo3
+            // 
+            this.btnEjemplo3.ImageIndex = 0;
+            this.btnEjemplo3.ImageList = this.imageList1;
+            this.btnEjemplo3.Location = new System.Drawing.Point(6, 211);
+            this.btnEjemplo3.Name = "btnEjemplo3";
+            this.btnEjemplo3.Size = new System.Drawing.Size(120, 90);
+            this.btnEjemplo3.TabIndex = 9;
+            this.btnEjemplo3.UseVisualStyleBackColor = true;
+            // 
+            // btnEjemplo2
+            // 
+            this.btnEjemplo2.ImageIndex = 1;
+            this.btnEjemplo2.ImageList = this.imageList1;
+            this.btnEjemplo2.Location = new System.Drawing.Point(6, 115);
+            this.btnEjemplo2.Name = "btnEjemplo2";
+            this.btnEjemplo2.Size = new System.Drawing.Size(120, 90);
+            this.btnEjemplo2.TabIndex = 8;
+            this.btnEjemplo2.UseVisualStyleBackColor = true;
+            this.btnEjemplo2.Click += new System.EventHandler(this.btnEjemplo2_Click);
+            // 
+            // btnEjemplo1
+            // 
+            this.btnEjemplo1.ImageIndex = 0;
+            this.btnEjemplo1.ImageList = this.imageList1;
+            this.btnEjemplo1.Location = new System.Drawing.Point(6, 19);
+            this.btnEjemplo1.Name = "btnEjemplo1";
+            this.btnEjemplo1.Size = new System.Drawing.Size(120, 90);
+            this.btnEjemplo1.TabIndex = 7;
+            this.btnEjemplo1.UseVisualStyleBackColor = true;
+            this.btnEjemplo1.Click += new System.EventHandler(this.btnEjemplo1_Click);
+            // 
+            // pbarProcesado
+            // 
+            this.pbarProcesado.Location = new System.Drawing.Point(172, 526);
+            this.pbarProcesado.Name = "pbarProcesado";
+            this.pbarProcesado.Size = new System.Drawing.Size(550, 23);
+            this.pbarProcesado.TabIndex = 7;
+            // 
+            // lblPbar
+            // 
+            this.lblPbar.AutoSize = true;
+            this.lblPbar.Location = new System.Drawing.Point(441, 531);
+            this.lblPbar.Name = "lblPbar";
+            this.lblPbar.Size = new System.Drawing.Size(21, 13);
+            this.lblPbar.TabIndex = 8;
+            this.lblPbar.Text = "0%";
+            this.lblPbar.Visible = false;
+            // 
             // btnCancelar
             // 
             this.btnCancelar.Enabled = false;
@@ -361,18 +373,6 @@
             this.btnProcesar.UseVisualStyleBackColor = true;
             this.btnProcesar.Click += new System.EventHandler(this.btnProcesar_Click);
             // 
-            // menuEnlazarFresa
-            // 
-            this.menuEnlazarFresa.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.menuEnlazarFresa.Checked = true;
-            this.menuEnlazarFresa.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.menuEnlazarFresa.ForeColor = System.Drawing.Color.Red;
-            this.menuEnlazarFresa.Image = global::ControladorFresaCNC.Properties.Resources.linkOff;
-            this.menuEnlazarFresa.Name = "menuEnlazarFresa";
-            this.menuEnlazarFresa.Size = new System.Drawing.Size(135, 20);
-            this.menuEnlazarFresa.Text = "Enlazar a Fresadora";
-            this.menuEnlazarFresa.Click += new System.EventHandler(this.menuEnlazarFresa_Click);
-            // 
             // lblTamaño
             // 
             this.lblTamaño.AutoSize = true;
@@ -408,13 +408,13 @@
             this.Menu.PerformLayout();
             this.groupElementos.ResumeLayout(false);
             this.groupElementos.PerformLayout();
-            this.groupEjemplos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupEjemplos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -454,7 +454,7 @@
         private System.Windows.Forms.ProgressBar pbarProcesado;
         private System.Windows.Forms.Label lblPbar;
         private System.Windows.Forms.PictureBox pbImagen;
-        private System.Windows.Forms.Label lblTamaño;
+        public System.Windows.Forms.Label lblTamaño;
     }
 }
 

@@ -12,18 +12,28 @@ namespace ControladorFresaCNC
 {
     public partial class frmDatos : Form
     {
-        public frmDatos(ref int ancho,ref int alto,ref bool borde)
+        frmPrincipal Padre;
+        public frmDatos(frmPrincipal _Padre)
         {
             InitializeComponent();
+            Padre = _Padre;
         }
 
         private void frmDatos_Load(object sender, EventArgs e)
         {
-
+            cmbAltoMedidaEn.SelectedItem = "cm";
+            cmbAnchoMedidaEn.SelectedItem = "cm";
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            //Establecer las propiedades fisicas del PCB y mostrarlo
+            Padre.Ancho =(float) neAncho.Value;
+            Padre.Alto = (float)neAlto.Value;            
+            Padre.lblTamaño.Text = "Tamaño: " + Padre.Ancho + " x " + Padre.Alto + " cm";
+
+            //Esta variable es para buscar o no el borde en la imagen, esto ayudará a facilitar en procesamiento de la imagen
+            Padre.Borde = rdSi.Checked; 
 
             this.Close();
         }

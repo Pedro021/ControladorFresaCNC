@@ -8,40 +8,43 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using AForge.Imaging.Filters;
-using AForge.Imaging;
-using AForge;
 
 namespace ControladorFresaCNC
 {
     public partial class frmPrincipal : Form
-    {
-        BaseUsingCopyPartialFilter filtro;
-        int Ancho, Alto;
-        bool Borde;
-        
+    {   
+        //Variables para guardar las caracteristicas propias del circuito a imprimir
+        public float Ancho, Alto;
+
+        //Esta variable es para que el usuario indique si la imagen que ingresó tiene borde o no. 
+        //Esto ayudará en el procesamiento de la imagen
+        public bool Borde; 
+        /************************/
+
         public frmPrincipal()
         {
             InitializeComponent();
         }
 
         private void frmPrincipal_Load(object sender, EventArgs e)
-        {
-            filtro = new CannyEdgeDetector();
-
-            
+        {   
         }
 
         private void menuAbrirImagen_Click(object sender, EventArgs e)
         {
+            //Codigo para Abrir una imagen del disco
             OpenFileDialog dialogo = new OpenFileDialog();
             dialogo.Filter = "Archivos de Imagen (*.jpg;*.bmp;*.png;*.pbm;*.tiff)|*.jpg;*.bmp;*.png;*.pbm;*.tiff";
+
             if (dialogo.ShowDialog() == DialogResult.Cancel) return;
 
             pbImagen.Image = Bitmap.FromFile(dialogo.FileName);
 
-            frmDatos ventana = new frmDatos();
+            //Ventana para obtener los datos fisicos del PCB
+            frmDatos ventana = new frmDatos(this);
             ventana.Show();
+            
+
 
         }
 
@@ -53,6 +56,8 @@ namespace ControladorFresaCNC
         
         private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //Codigo para guardar la imagen procesada si se desea
+
             SaveFileDialog dialogo = new SaveFileDialog();
             dialogo.Filter = "JPeg Image|*.jpg|Bitmap Image|*.bmp|Png Image|*.png";
             dialogo.Title = "Guardar Imagen";
@@ -81,10 +86,13 @@ namespace ControladorFresaCNC
         }
 
 
+        //Este sirve para establecer la conexión serial con el PIC
         private void menuEnlazarFresa_Click(object sender, EventArgs e)
         {
-            if (menuEnlazarFresa.ForeColor == Color.Red)
+            //El boton Enlazar tarea cambia su color si se logra establecer la conexión, por eso la siguiente condicion
+            if (menuEnlazarFresa.ForeColor == Color.Red) 
             {
+                //Abre un cuadro de dialogo para escoger el puerto en el que está conectada la fresadora
                 frmConexionSerial ventana = new frmConexionSerial(this);
                 ventana.Show();
             }
@@ -100,6 +108,11 @@ namespace ControladorFresaCNC
             }
         }
 
+
+
+
+
+        /*Codigo de los botones que abren las imagenes de ejemplo*/
         private void btnEjemplo1_Click(object sender, EventArgs e)
         {   
             Ancho = 5;
